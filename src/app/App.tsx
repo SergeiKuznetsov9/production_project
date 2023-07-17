@@ -1,9 +1,13 @@
-import { Route, Routes, Link } from "react-router-dom";
-import { Suspense } from "react";
+// Корень приложения должен быть максимально чистым
+// Роутер - штука глобальная, поэтому его нужно выносить на уровень app
+// вынесем его на уровень провайдера
+// Там создаим папку ui, где будет находится сам роутер,
+// Также создадим файл index.tsx - это наш паблик апи
+
+import { Link } from "react-router-dom";
 
 import { UseTheme } from "app/providers/ThemeProviders/lib/UseTheme";
-import { MainPage } from "pages/MainPage";
-import { AboutPage } from "pages/AboutPage";
+import { AppRouter } from "./providers/router";
 
 import "./styles/index.scss";
 import { classNames } from "../shared/lib/classNames/classNames";
@@ -16,13 +20,7 @@ export const App = () => {
       <button onClick={toggleTheme}>Изменить тему</button>
       <Link to={"/"}>Главная</Link>
       <Link to={"/about"}>О сайте</Link>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={"/"} element={<MainPage />} />
-          <Route path={"/about"} element={<AboutPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 };
