@@ -1,3 +1,5 @@
+// Поскольку эту функцию будем использовать везде, перенесем ее в shared слой в слайс lib
+
 type Mods = Record<string, boolean | string>;
 
 export function classNames(
