@@ -15,8 +15,6 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ABOUT]: "/about",
 };
 
-// RouteProps - это тип из самого реакт-роутер-дом
-
 export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,
