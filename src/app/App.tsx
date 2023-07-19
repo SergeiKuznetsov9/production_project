@@ -1,25 +1,23 @@
-// Корень приложения должен быть максимально чистым
-// Роутер - штука глобальная, поэтому его нужно выносить на уровень app
-// вынесем его на уровень провайдера
-// Там создаим папку ui, где будет находится сам роутер,
-// Также создадим файл index.tsx - это наш паблик апи
+// Продолжим дальше чистить этот файл и перенесем отсюда навбар)) и кнопку переключения тем
+// Навбар по своей сути - это виджет
 
 import { Link } from "react-router-dom";
 
 import { UseTheme } from "app/providers/ThemeProviders/lib/UseTheme";
+import { classNames } from "../shared/lib/classNames/classNames";
+
 import { AppRouter } from "./providers/router";
+import { Navbar } from "widgets/Navbar";
 
 import "./styles/index.scss";
-import { classNames } from "../shared/lib/classNames/classNames";
 
 export const App = () => {
   const { toggleTheme, theme } = UseTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
+      <Navbar />
       <button onClick={toggleTheme}>Изменить тему</button>
-      <Link to={"/"}>Главная</Link>
-      <Link to={"/about"}>О сайте</Link>
       <AppRouter />
     </div>
   );

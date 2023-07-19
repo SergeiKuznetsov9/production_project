@@ -1,6 +1,3 @@
-// Хотелось бы создать конфиг, в котором мы определим список роутов, а здесь просто их пропишем
-// сделаем это на уровне shared
-
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { routeConfig } from "shared/config/routeConfig/routeConfig";
