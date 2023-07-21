@@ -1,6 +1,3 @@
-// Это хорошая практика, т.к. мы может захотим хранить маршруты
-// в стэйте
-
 import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { RouteProps } from "react-router-dom";

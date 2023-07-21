@@ -3,6 +3,21 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+  // Если шрифты будем использовать, то сюда в регулярку их нужно дописать
+  const imageLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  };
+
   const typeScriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
@@ -31,5 +46,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  return [typeScriptLoader, cssLoaders];
+  return [typeScriptLoader, cssLoaders, svgLoader, imageLoader];
 }
