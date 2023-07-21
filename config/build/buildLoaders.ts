@@ -3,7 +3,6 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-  // Если шрифты будем использовать, то сюда в регулярку их нужно дописать
   const imageLoader = {
     test: /\.(png|jpe?g|gif)$/i,
     use: [

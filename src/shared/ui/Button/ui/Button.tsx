@@ -1,6 +1,3 @@
-// В данном компоненте реализован подход при котором эта кнопка будет
-// иметь различный вид
-
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 import { ButtonHTMLAttributes, FC } from "react";
