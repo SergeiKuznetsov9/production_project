@@ -19,9 +19,6 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    // используется для того, чтобы при изменении каких то данных, например размера шрифта,
-    // перезагрузка страницы не осуществлялась
-    // По умолчанию в стандартной сборке эта штука есть и так, но плагин работает лучше
     new webpack.HotModuleReplacementPlugin(),
   ];
 }
