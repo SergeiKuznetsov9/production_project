@@ -13,3 +13,29 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     </div>
   );
 }; */
+
+
+
+
+
+
+
+
+// import classNames from "classnames";
+// import { FC } from "react";
+// import cls from './Sidebar.module.scss' 
+
+// interface SidebarProps {
+//   className?: string;
+// }
+
+// export const Sidebar: FC<SidebarProps> = ({ className }) => {
+//   return (
+//     <div
+//     className={classNames(className, cls.Sidebar)}
+//     >
+//         {/* className={classNames(cls.Button, { [cls[theme]]: true }, [className])} */}
+//       Sidebar
+//     </div>
+//   );
+// };
