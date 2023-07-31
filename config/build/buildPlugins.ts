@@ -1,10 +1,11 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./types/config";
-import MiniCssExtractPlugin  from "mini-css-extract-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildPlugins({
   paths,
+  isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -12,8 +13,14 @@ export function buildPlugins({
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
+    }),
+    new webpack.DefinePlugin({
+      // Здесь мы присваиваем значение переменной __IS_DEV__ в зависимости от окружения.
+      // Теперь она будет доступна в коде и мы можем включить вывод в консоль уведомлений от i18n
+      // в зависимости от окружения
+      __IS_DEV__: JSON.stringify(isDev),
     }),
   ];
 }
