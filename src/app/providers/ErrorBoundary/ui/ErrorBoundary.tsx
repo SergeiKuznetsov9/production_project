@@ -1,5 +1,5 @@
-import React, { ErrorInfo, ReactNode } from "react";
-import { withTranslation } from "react-i18next";
+import React, { ErrorInfo, ReactNode, Suspense } from "react";
+import { PageError } from "widgets/PageError";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface ErrorBoundaryState {
   hasError: boolean;
 }
 
-export class ErrorBoundary extends React.Component<
+class ErrorBoundary extends React.Component<
   ErrorBoundaryProps,
   ErrorBoundaryState
 > {
@@ -30,12 +30,17 @@ export class ErrorBoundary extends React.Component<
     const { hasError } = this.state;
     const { children } = this.props;
     if (hasError) {
-      return <h1>Something went wrong</h1>;
+      return (
+        <Suspense fallback="">
+          <PageError />
+        </Suspense>
+      );
     }
 
     return children;
   }
 }
+export default ErrorBoundary;
 
 //   Поскольку в классе нельзя использовать useTranslation, для использования переводов
 // в классовом компоненте можно  применить HOC следующим образом:

@@ -7,12 +7,17 @@ interface PageErrorProps {
   className?: string;
 }
 
-export const ThemeSwitcher = ({ className }: PageErrorProps) => {
+export const PageError = ({ className }: PageErrorProps) => {
   const { t } = useTranslation();
+
+  const reloadPage = () => {
+    location.reload();
+  };
+
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
       {t("Произошла непредвиденная ошибка")}
-      <Button>{t("Перезагрузить страницу")}</Button>
+      <Button onClick={reloadPage}>{t("Перезагрузить страницу")}</Button>
     </div>
   );
 };
