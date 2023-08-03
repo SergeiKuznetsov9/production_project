@@ -1,8 +1,11 @@
 {
   "Тестовый пример": "Test example",
   "Язык": "English",
+  "Кортокий язык": "En",
   "Страница не найдена": "Page not found",
   "Произошла непредвиденная ошибка": "An unexpected error occured",
   "Перезагрузить страницу": "Reload this page",
-  "Переключить": "Toggle"
+  "Переключить": "Toggle",
+  "Главная": "Main",
+  "О сайте": "About"
 }
