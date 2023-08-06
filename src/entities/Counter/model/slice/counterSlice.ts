@@ -1,7 +1,3 @@
-//3 Создается один из слайсов. Он экспортирует actions и reducer, которые тут же переименовываются
-// каждый из таких редьюсеров прокидывается в функцию создания стора
-// тут же типизироуется стэйт этого слайса
-
 import { createSlice } from "@reduxjs/toolkit";
 import { CounterSchema } from "../types/counterSchema";
 
