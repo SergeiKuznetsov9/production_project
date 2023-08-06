@@ -1,0 +1,5 @@
+Для поднятия сревера:
+
+1. Устанавливаем его: npm i -g json-server
+2. создаем файл db.json и наполняем его чем нибудь
+3. Запускаем json-server --watch ./json-server/db.json --port 8000
