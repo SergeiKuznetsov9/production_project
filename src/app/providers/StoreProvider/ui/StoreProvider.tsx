@@ -12,7 +12,7 @@ export const StoreProvider = ({
   children,
   initialState,
 }: StoreProviderProps) => {
-  const store = createReduxStore(initialState);
+  const store = createReduxStore();
 
   return <Provider store={store}>{children}</Provider>;
 };

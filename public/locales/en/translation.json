@@ -8,5 +8,7 @@
   "Переключить": "Toggle",
   "Главная": "Main",
   "О сайте": "About",
-  "Войти": "LogIn"
+  "Войти": "LogIn",
+  "Введите userName": "Enter useName",
+  "Введите пароль": "Enter password"
 }

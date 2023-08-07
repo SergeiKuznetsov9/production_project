@@ -1,13 +1,22 @@
-import { BugButton } from "app/providers/ErrorBoundary";
-import { Counter } from "entities/Counter";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Input } from "shared/ui/Input";
 
 const MainPage = () => {
   const { t } = useTranslation("main");
+
+  const [inputVal, setInputVal] = useState("");
+  const inputHandler = (val: string) => {
+    setInputVal(val);
+  };
+
   return (
     <div>
-      <BugButton />
-      <Counter />
+      <Input
+        onChange={inputHandler}
+        value={inputVal}
+        placeholder="Введите текст"
+      />
       <div>{t("Главная страница")}</div>
     </div>
   );
