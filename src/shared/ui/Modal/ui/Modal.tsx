@@ -1,9 +1,3 @@
-// стоит учитывать, что этот комопонент помещается в DOM сразу же, не дожидаясь
-// своего открытия, поэтому автофокус поставить на инпуты, которые в него помещены -
-//  достаточно проблематично
-// Лучше всего модалку делать с ленивой подгрузкой. В таком случае в нее можно будет
-// запихнуть какой нибудь ленивый комопонент
-
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Modal.module.scss";
 import { ReactNode, useEffect, useState } from "react";
@@ -30,7 +24,6 @@ export const Modal = ({
 
   const [isMounted, setIsMounted] = useState(false);
 
-  // Как только хотябы раз модалка откроется, она уже будет иметь isMounted === true
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);

@@ -2,9 +2,6 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
 import { InputHTMLAttributes, useEffect, useRef, useState } from "react";
 
-// Эта конструкция записывает в тип HTMLInputProps все атрибуты, которые
-// принимает input за исключением 'value' и 'onChange'. Другими словами Omit
-// исключает из типа определенные поля
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "value" | "onChange"
@@ -52,7 +49,6 @@ export const Input = ({
   };
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Эта штука работает и с функциями таким образом:
     onChange?.(event.target.value);
     setCaretPosition(event.target.value.length);
   };
@@ -69,7 +65,6 @@ export const Input = ({
           className={cls.input}
           onFocus={onFocus}
           onBlur={onBlur}
-          //   Это событие позволяет отслеживать что выбрано, где находится каретка и т.д.
           onSelect={onSelect}
           {...otherProps}
         ></input>
