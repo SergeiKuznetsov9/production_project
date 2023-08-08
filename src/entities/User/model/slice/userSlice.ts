@@ -11,7 +11,7 @@ export const userSlice = createSlice({
     setAuthData: (state, action: PayloadAction<User>) => {
       state.authData = action.payload;
     },
-    // Вот это вот нужно вызывать в App, т.е. в самом корне
+
     initAuthData: (state) => {
       const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
       if (user) {

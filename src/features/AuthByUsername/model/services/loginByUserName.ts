@@ -9,8 +9,6 @@ interface LoginByUsernameProps {
   password: string;
 }
 
-// дженерик содержит тип user - то что вернется по запросу, и LoginByUsernameProps -
-// тип пэйлоада
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
   "login/loginByUsername",
   async ({ username, password }, thunkAPI) => {
@@ -35,7 +33,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
       return response.data;
     } catch (error) {
       console.log(error);
-      // Хук использовать нельзя, поэтому обращаемся к i18n напрямую
       return thunkAPI.rejectWithValue(
         i18n.t("Вы ввели неверный логин или пароль")
       );

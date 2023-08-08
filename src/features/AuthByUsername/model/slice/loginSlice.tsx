@@ -20,7 +20,6 @@ export const loginSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // То, что возвращает AsyncThunk попадает сюда в action.payload
     builder
       .addCase(loginByUsername.pending, (state, action) => {
         state.error = undefined;
