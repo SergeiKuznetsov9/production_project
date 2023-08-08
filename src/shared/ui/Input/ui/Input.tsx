@@ -29,7 +29,6 @@ export const Input = ({
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    console.log("effect");
     if (autofocus) {
       setIsFocused(true);
       inputRef.current?.focus();
